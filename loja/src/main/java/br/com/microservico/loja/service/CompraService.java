@@ -7,14 +7,15 @@ import org.springframework.web.client.RestTemplate;
 
 import br.com.microservico.loja.controller.dto.CompraDTO;
 import br.com.microservico.loja.controller.dto.InfoFornecedorDTO;
+import br.com.microservico.loja.utils.Constants;
 
 @Service
 public class CompraService {
-
+	
 	public void realizaCompra(CompraDTO compra) {
 		RestTemplate client = new RestTemplate();
 		ResponseEntity<InfoFornecedorDTO> exchange =
-				client.exchange("http://localhost:8081/info/"+compra.getEndereco().getEstado(),
+				client.exchange(Constants.FORNECEDOR_URI+compra.getEndereco().getEstado(),
 						HttpMethod.GET, null, InfoFornecedorDTO.class);
 		System.out.println(exchange.getBody().getEndereco());
 	}

@@ -40,7 +40,3 @@ digraph g {
 ## Versionamento
 
 [semver](https://semver.org/)
-
-## Fonte
-
-* https://github.com/acenelio/springboot2-ionic-backend
