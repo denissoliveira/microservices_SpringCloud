@@ -13,19 +13,6 @@
 
 Estudo de Spring Cloud.
 
-```mermaid
-graph LR
-Loja --> Fornecedor;
-```
-
-```dot
-digraph g {
-    Loja -> Fornecedor
-    Transpotadora -> Fornecedor
-    Fornecedor -> Transpotadora
-}
-```
-​
 ## Conventional Commits
 
 [Conventional Commits](https://www.conventionalcommits.org/)
