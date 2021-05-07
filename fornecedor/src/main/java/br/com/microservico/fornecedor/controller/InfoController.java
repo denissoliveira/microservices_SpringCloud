@@ -23,6 +23,7 @@ public class InfoController {
 		System.out.println("Estado "+estado);
 		Optional<InfoFornecedor> info = infoService.getInfoPorEstado(estado);
 		if (info.isPresent()) {
+			System.out.println("Info carregada !");
 			return info.get();
 		}
 		return null;

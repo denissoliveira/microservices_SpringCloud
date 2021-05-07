@@ -1,6 +1,9 @@
 spring:
   application:
     name: 'loja'
+  cloud:
+    config:
+      fail-fast: true
     
 eureka:
   client:

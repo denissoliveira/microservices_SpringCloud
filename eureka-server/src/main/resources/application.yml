@@ -5,4 +5,3 @@ eureka:
   client: 
     fetch-registry: false #para ele não se registrar 
     register-with-eureka: false #para ele não se registrar
-      

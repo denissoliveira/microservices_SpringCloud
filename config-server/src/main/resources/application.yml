@@ -1,0 +1,15 @@
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: '@project.artifactId@'
+  profiles:
+    active: native # vai procurar no filesystem
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: /home/denis/projetos/estudos/microservicesEstudo/microservice-repo
+          
+          
