@@ -13,6 +13,13 @@
 
 Estudo de Spring Cloud.
 
+* Implemente o Service Discovery com Eureka
+* Centralize as configurações com Spring Config Server
+* Aumente a disponibilidade com Client-side Load Balancer
+* Monitore e depure requisições com Distributed Tracing
+* Spring Feing
+* Spring Sleuth
+
 ## Conventional Commits
 
 [Conventional Commits](https://www.conventionalcommits.org/)
