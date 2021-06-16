@@ -19,6 +19,8 @@ Estudo de Spring Cloud.
 * Monitore e depure requisições com Distributed Tracing
 * Spring Feing
 * Spring Sleuth
+* Hystrix **(circuit breaker (TAS))**
+* API Gateway Zuul
 
 ## Conventional Commits
 

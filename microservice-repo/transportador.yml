@@ -1,0 +1,93 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: transportador
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    default-property-inclusion: NON_NULL
+    locale: pt-BR
+    time-zone: America/Sao_Paulo
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+   url: jdbc:h2:mem:transportadordb;DB_CLOSE_ON_EXIT=FALSE
+   username: sa
+   password: 
+   driver-class-name: org.h2.Driver
+   platform: h2 # dizer qual banco esta usando
+  jpa:
+    generate-ddl: true
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: false   
+feign:
+  hystrix:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+debug: false
+trace: false
+server:
+  compression:
+    enabled: true
+    min-response-size: 1
+  port: 8082
+  undertow:
+    accesslog:
+      dir: logs
+      enabled: false
+      pattern: '%t %a "%r" %s (%D ms)'
+logging:
+  level:
+    org:
+      springframework: warn
+      hibernate: warn
+      xnio: warn
+      jboss: warn
+    io:
+      undertow: warn
+    com:
+      zaxxer:
+        hikari:
+          HikariDataSource: warn
+# Actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+info:
+  app:
+    name: Transportador
+    description: Microserviço Transportador
+    version: 1.2.0
+    encoding: UTF-8
+    java:
+      version: 11
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8001/user
+hystrix:
+  shareSecurityContext: true
